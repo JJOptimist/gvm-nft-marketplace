@@ -3,10 +3,11 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
-contract NFTMarketplace is Ownable {
+contract NFTMarketplace is Ownable, IERC721Receiver {
     using SafeMath for uint256;
 
     ERC721 public nftContract;
@@ -81,5 +82,14 @@ contract NFTMarketplace is Ownable {
         }
 
         return result;
+    }
+
+    function onERC721Received(
+        address operator,
+        address from,
+        uint256 tokenId,
+        bytes calldata data
+    ) external override returns (bytes4) {
+        return this.onERC721Received.selector;
     }
 }

@@ -236,6 +236,40 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "onERC721Received",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "owner",
 				"outputs": [
@@ -285,6 +319,9 @@
 		"devdoc": {
 			"kind": "dev",
 			"methods": {
+				"onERC721Received(address,address,uint256,bytes)": {
+					"details": "Whenever an {IERC721} `tokenId` token is transferred to this contract via {IERC721-safeTransferFrom} by `operator` from `from`, this function is called. It must return its Solidity selector to confirm the token transfer. If any other value is returned or the interface is not implemented by the recipient, the transfer will be reverted. The selector can be obtained in Solidity with `IERC721Receiver.onERC721Received.selector`."
+				},
 				"owner()": {
 					"details": "Returns the address of the current owner."
 				},
@@ -432,11 +469,11 @@
 			]
 		},
 		"contracts/GVMarketplace.sol": {
-			"keccak256": "0xf0100b2aec1fb4349981756d23fbd9ea04c2eeef8cc0d74d72ac178716509b74",
+			"keccak256": "0xda46567c54c293958ee885ab518c1ff5a04945ce233d482f1127540ce65b2134",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5208646bfe822031092a39331a97bcbb6b96ad1ece608292cb5694d7b0f1bde7",
-				"dweb:/ipfs/QmcYcmTafcpZy1b8LGZvdHbZHKXH122A25SkHGDJaryo8B"
+				"bzz-raw://08c61dd14cbc7e17f0867ae48d83c0b3f27cb9bf62eb2844c4922265443fcfda",
+				"dweb:/ipfs/QmREpD6iWELPrhMD1VbinXFyKYPSzCZmGWcPtyUuT3zb4U"
 			]
 		}
 	},
